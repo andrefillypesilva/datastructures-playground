@@ -9,7 +9,7 @@ To run this application you will need only run `npm run serve`.
 
 An initial data structure will be generated when the application starts off. Then you can manipulate this data structure inserting information in the inputs and choosing an action by the buttons.
 
-![Application Example](https://github.com/andrefillypesilva/data-structures-playground/blob/main/application_example.jpg?raw=true)
+![Application Example](https://github.com/andrefillypesilva/datastructures-playground/blob/main/application_example.jpg?raw=true)
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.

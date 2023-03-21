@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title><%= htmlWebpackPlugin.options.title %></title>
+        <link rel="stylesheet" href="https://unpkg.com/terminal.css@0.7.2/dist/terminal.min.css" />
+        <link rel="stylesheet" href="https://unpkg.com/treeflex/dist/css/treeflex.css">
+    </head>
+    <body class="data-structures-playground terminal container">
+        <header class="data-structures-playground__header">
+            <nav class="terminal-menu"></nav>
+        </header>
+        <main class="data-structures-playground__main"></main>
+        <footer class="data-structures-playground__footer">
+            <span>&copy; André Silva 2023</span>
+        </footer>
+        <script>
+            const components = `<%= htmlWebpackPlugin.options.components.toString() %>`.split(',');
+
+            let i = 0;
+            const terminalMenu = document.getElementsByClassName('terminal-menu')[0];
+            const menu = document.createElement('ul');
+            
+            for (component of components) {
+                const componentEl = document.createElement('section');
+                componentEl.setAttribute('id', component);
+                if (i > 0) componentEl.setAttribute('class', 'data-structures-playground__main--hidden');
+                document.getElementsByClassName('data-structures-playground__main')[0].appendChild(componentEl);
+
+                const menuListItem = document.createElement('li');
+                const menuItem = document.createElement('a');
+
+                menuItem.setAttribute('class', 'menu-item');
+                menuItem.setAttribute('data-component', component);
+                menuItem.setAttribute('href', '#');
+                if (i === 0) {
+                    menuItem.setAttribute('class', 'menu-item active');
+                    i++;
+                }
+                menuItem.addEventListener('click', () => {
+                    const menuListItems = [...menu.children];
+
+                    menuListItems.forEach((li) => {
+                        li.childNodes[0].classList.remove('active');
+                    });
+
+                    menuItem.classList.add('active');
+
+                    for (comp of components) {
+                        const currentCompoennt = document.getElementById(comp);
+
+                        if (currentCompoennt) {
+                            if (comp === menuItem.dataset.component) {
+                                currentCompoennt.className = '';
+                            } else {
+                                currentCompoennt.className = 'data-structures-playground__main--hidden';
+                            }
+                        }
+                    }
+                });
+
+                const componentName = component.replace(/\-/g, ' ').split(' ');
+
+                for (let i = 0; i < componentName.length; i++) {
+                    componentName[i] = `${componentName[i].charAt(0).toUpperCase()}${componentName[i].slice(1)}`;
+                }
+
+                menuItem.textContent = `${componentName.join(' ')}`;
+
+                menuListItem.appendChild(menuItem);
+                menu.appendChild(menuListItem);
+                terminalMenu.appendChild(menu);
+            }
+        </script>
+    </body>
+</html>

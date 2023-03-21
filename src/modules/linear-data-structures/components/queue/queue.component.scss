@@ -1,0 +1,22 @@
+.queue {
+    &__container {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        margin: var(--spacing-m) 0;
+    }
+
+    &__item {
+        img {
+            height: 5rem;
+            width: auto;
+        }
+    }
+
+    &__cta {
+        display: flex;
+
+        button {
+            flex-grow: 1;
+        }
+    }
+}

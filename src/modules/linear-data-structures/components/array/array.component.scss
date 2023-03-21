@@ -1,0 +1,36 @@
+.array {
+    &__terminal-prompt {
+        padding: var(--spacing-xxs);
+        height: var(--spacing-3xl);
+        overflow: scroll;
+        border: 1px solid;
+        border-radius: var(--spacing-3xs);
+
+        &--old-commands {
+            margin-bottom: var(--spacing-xxs);
+
+            * {
+                display: block;
+            }
+
+            a {
+                margin-bottom: var(--spacing-3xs);
+            }
+        }
+    }
+
+    &__cta {
+        display: flex;
+        align-items: center;
+        padding: var(--spacing-xxs) 0;
+        gap: var(--spacing-xs);
+
+        .btn-group, button {
+            flex-basis: 100%;
+        }
+
+        .btn-group {
+            display: flex;
+        }
+    }
+}

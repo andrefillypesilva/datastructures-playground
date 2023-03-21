@@ -1,0 +1,50 @@
+.binary-tree {
+    &__container {
+        display: flex;
+        justify-content: center;
+
+        ul {
+            li {
+                &::before {
+                    border-color: var(--secondary-color);
+                }
+
+                &::after {
+                    content: '';
+                }
+
+                .tf-nc {
+                    border-color: var(--secondary-color);
+
+                    &::before, &::after {
+                        border-color: var(--secondary-color);
+                    }
+                }
+
+                &.binary-tree__empty-node {
+                    color: var(--tertiary-color);
+                }
+            }
+        }
+    }
+
+    &__actions {
+        display: flex;
+
+        input {
+            flex-grow: 1;
+            width: auto;
+            margin-right: var(--spacing-xs);
+        }
+
+        button {
+            flex-grow: 3;
+        }
+    }
+
+    &__traverse-actions {
+        display: flex;
+        justify-content: space-around;
+        margin-top: var(--spacing-xxs);
+    }
+}

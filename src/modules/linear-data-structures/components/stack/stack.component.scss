@@ -1,0 +1,42 @@
+.stack {
+    &__container {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        padding: var(--spacing-xs);
+    }
+
+    &__box {
+        grid-column: 1 / 4;
+        padding: var(--spacing-3xs);
+        border: 1px solid var(--error-color);
+        border-top: none;
+        border-bottom-left-radius: 1rem;
+        border-bottom-right-radius: 1rem;
+    }
+
+    &__item {
+        width: calc(100% - var(--spacing-xxs) * 2);
+        background: var(--primary-color);
+        text-align: center;
+        padding: var(--spacing-xxs);
+        margin: var(--spacing-xxs);
+        font-size: var(--spacing-xs);
+        color: var(--invert-font-color);
+    }
+
+    &__actions {
+        grid-column: 4 / -1;
+        padding: var(--spacing-xs);
+    }
+
+    &__cta {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: var(--spacing-xxs);
+        height: calc(100% - var(--spacing-xs));
+
+        .btn {
+            flex: 50%;
+        }
+    }
+}

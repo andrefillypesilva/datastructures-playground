@@ -1,0 +1,92 @@
+.linked-list {
+    &__container {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: var(--spacing-m) var(--spacing-xs);
+        margin-top: var(--spacing-m);
+        min-height: var(--spacing-3xl);
+
+        &--no-flex {
+            display: block;
+
+            .terminal-prompt {
+                margin-top: var(--spacing-xs);
+            }
+        }
+    }
+
+    &__item {
+        position: relative;
+        border: 1px solid var(--primary-color);
+    }
+
+    &__arrow {
+        font-size: 5rem;
+
+        &--end {
+            position: relative;
+
+            span {
+                position: absolute;
+                left: 4rem;
+                font-size: 2rem;
+            }
+        }
+    }
+
+    &__head {
+        padding: var(--spacing-xxs);
+        border-bottom: 1px solid var(--primary-color);
+        min-width: 5rem;
+        font-weight: 700;
+        text-align: center;
+        font-size: 2rem;
+    }
+
+    &__item-title {
+        position: absolute;
+        top: -2rem;
+        left: -4px;
+        width: 110%;
+        background: var(--primary-color);
+        color: black;
+        padding: .1rem;
+        text-align: center;
+    }
+
+    &__body {
+        position: relative;
+        padding: var(--spacing-xxs);
+        background: rgba(200, 53, 69, .5);
+    }
+
+    &__bullet {
+        position: absolute;
+        right: -14px;
+        top: 4px;
+        border: 1px solid var(--primary-color);
+        border-radius: 1rem;
+        width: 1.6rem;
+        height: 1.6rem;
+
+        &--core {
+            position: absolute;
+            left: 2px;
+            top: 2px;
+            width: 1rem;
+            height: 1rem;
+            border-radius: 1rem;
+            margin: .1rem;
+            background: var(--primary-color);
+        }
+    }
+
+    &__cta {
+        display: flex;
+        align-items: center;
+        gap: var(--spacing-xs);
+        padding: var(--spacing-xxs) 0;
+        margin-top: var(--spacing-m);
+    }
+}

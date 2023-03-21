@@ -1,0 +1,19 @@
+{
+  "name": "datastructures-playground",
+  "version": "1.0.0",
+  "description": "A simple project using the [datastructures-es6] (https://www.npmjs.com/package/datastructures-es6) package.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andrefillypesilva/datastructures-playground.git"
+  },
+  "author": "André Silva",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andrefillypesilva/datastructures-playground/issues"
+  },
+  "homepage": "https://github.com/andrefillypesilva/datastructures-playground#readme"
+}

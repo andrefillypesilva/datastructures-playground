@@ -27,10 +27,10 @@
   "devDependencies": {
     "@babel/core": "^7.20.7",
     "@babel/preset-env": "^7.20.2",
+    "@datastructures-es6/core": "^2.0.11",
     "babel-loader": "^9.1.0",
     "copy-webpack-plugin": "^11.0.0",
     "css-loader": "^6.7.3",
-    "data-structures-playground": "^1.0.7",
     "html-webpack-plugin": "^5.5.0",
     "node-sass": "^8.0.0",
     "sass-loader": "^13.2.0",

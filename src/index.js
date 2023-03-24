@@ -1,7 +1,6 @@
 import { Bootstrap } from './utils/bootstrap.utils.js';
 
-import { Array, LinkedList, Queue, Stack } from 'data-structures-playground/src/modules/linear-data-structures/linear-data-structures.module.js';
-import { BinaryTree } from 'data-structures-playground/src/modules/non-linear-data-structures/non-linear-data-structures.module.js';
+import { Array, LinkedList, Queue, Stack, BinaryTree } from '@datastructures-es6/core/src/index.js';
 
 import './index.scss';
 
@@ -66,6 +65,40 @@ export class Index {
             this.binaryTree.insert(leafValue);
         }
     }
+
+    maximumDepthOfBinaryTree() {
+        const currentNode = this.binaryTree.root;
+        const currentDepth = {
+            value: 0,
+        }
+        const maxDepth = {
+            value: 0,
+        };
+
+        const result = this.traverseBinaryTree(currentNode, [], currentDepth, maxDepth);
+        console.log(`Maximum Depth Of Binary Tree (${result.list}): ${result.maxDepth.value}`);
+    }
+
+    traverseBinaryTree(node, list, currentDepth, maxDepth) {
+        list.push(node.key);
+        currentDepth.value++;
+        if (currentDepth.value > maxDepth.value) maxDepth.value = currentDepth.value;
+
+        if (node.left) {
+            this.traverseBinaryTree(node.left, list, currentDepth, maxDepth);
+        }
+
+        if (node.right) {
+            this.traverseBinaryTree(node.right, list, currentDepth, maxDepth);
+        }
+
+        currentDepth.value--;
+        return {
+            list,
+            currentDepth,
+            maxDepth,
+        };
+    }
 }
 
 const index = new Index();
@@ -77,6 +110,7 @@ index.createLinkedList();
 index.createQueue();
 index.createStack();
 index.createBinaryTree();
+index.maximumDepthOfBinaryTree();
 
 setTimeout(() => {
     Bootstrap.prototype.createDOMEvents(index);
